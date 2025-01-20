@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     default:
-      "bg-primary text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500",
+      "bg-red text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500",
     hover: "bg-teal-600 text-white",
     focus: "ring-2 ring-teal-500 bg-teal-700 text-white",
     inactive: "bg-black text-white  cursor-not-allowed",
