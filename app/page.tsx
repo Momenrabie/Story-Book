@@ -1,5 +1,7 @@
 import Button from "@/components/ui/BUtton2/button2";
+import { Disable, Icon } from "@/components/ui/BUtton2/button2.stories";
 import Input from "@/components/ui/Input/input";
+import { Error, Password, WithIcon } from "@/components/ui/Input/input.stories";
 export default function Home() {
   return (
     <div className="flex flex-col  pt-20 gap-6 items-center">
@@ -16,6 +18,8 @@ export default function Home() {
         <Button size="small" variant="default">
           📧
         </Button>
+        <Button {...Icon.args} />
+        <Button {...Disable.args}></Button>
       </div>
       <div className=" flex-col  ">
         <h1 className="text-h1">Stories for Input</h1>
@@ -26,29 +30,9 @@ export default function Home() {
           types="text"
           className="mt-2 mb-2"
         ></Input>
-        <Input
-          size="medium"
-          variant="error"
-          placeholder="enter text"
-          errorMessage="An error occurred."
-          types="email"
-          className="mt-2 mb-2"
-        />
-        <Input
-          size="medium"
-          variant="default"
-          placeholder="enter password"
-          types="password"
-          className="mt-2 mb-2"
-        />
-        <Input
-          size="medium"
-          variant="default"
-          placeholder="enter password"
-          types="password"
-          icon="🔍"
-          className="mt-2 mb-2"
-        />
+        <Input {...Error.args} className="mt-2 mb-2" />
+        <Input {...Password.args} className="mt-2 mb-2" />
+        <Input {...WithIcon.args} className="mt-2 mb-2" />
       </div>
     </div>
   );
