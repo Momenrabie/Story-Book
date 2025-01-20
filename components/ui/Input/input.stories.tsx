@@ -48,7 +48,7 @@ export const Default: Story = {
 
 export const Password: Story = {
   args: {
-    size: "small",
+    size: "medium",
     variant: "hover",
     placeholder: "Enter password...",
     types: "password",
@@ -81,6 +81,14 @@ export const Error: Story = {
 export const WithIcon: Story = {
   args: {
     ...Default.args,
+    icon: "🔍",
+  },
+};
+export const ErrorIcon: Story = {
+  args: {
+    ...Default.args,
+    variant: "error",
+    errorMessage: "An error occurred.",
     icon: "🔍",
   },
 };
