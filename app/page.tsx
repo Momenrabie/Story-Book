@@ -1,7 +1,9 @@
-import Button from "@/components/ui/BUtton2/button2";
-import { Disable, Icon } from "@/components/ui/BUtton2/button2.stories";
+import Button from "@/components/ui/BUtton/button";
+import { Disable, Icon } from "@/components/ui/BUtton/button.stories";
 import Input from "@/components/ui/Input/input";
 import { Error, Password, WithIcon } from "@/components/ui/Input/input.stories";
+import AuthPage from "@/components/ui/Login/login";
+import { Login, Register } from "@/components/ui/Login/login.stories";
 export default function Home() {
   return (
     <div className="flex flex-col  pt-20 gap-6 items-center">
@@ -34,6 +36,8 @@ export default function Home() {
         <Input {...Password.args} className="mt-2 mb-2" />
         <Input {...WithIcon.args} className="mt-2 mb-2" />
       </div>
+      <AuthPage {...Login.args} />
+      <AuthPage {...Register.args} />
     </div>
   );
 }

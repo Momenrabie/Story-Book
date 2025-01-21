@@ -34,8 +34,9 @@ const Input: React.FC<InputProps> = ({
 
   const sizeClasses = {
     small: "px-3 py-1 text-sm",
-    medium: "px-4 py-2 text-base",
+    medium: "md:px-4 md:py-2 text-base sm:px-1 sm:py-1 sm:text-sm",
   };
+  
 
   const variantClasses = {
     default:

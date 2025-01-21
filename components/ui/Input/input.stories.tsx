@@ -55,10 +55,12 @@ export const Password: Story = {
   },
 };
 
-export const Focus: Story = {
+export const Email: Story = {
   args: {
-    ...Default.args,
+    size: "medium",
+    placeholder: "Enter Email...",
     variant: "focus",
+    types:"email"
   },
 };
 

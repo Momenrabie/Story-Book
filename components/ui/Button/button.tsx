@@ -1,57 +1,54 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import React from "react";
+import clsx from "clsx";
 
-import { cn } from "@/lib/utils"
+type ButtonProps = {
+  /** The size of the button. */
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground font-black shadow hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
+  size?: "small" | "medium";
+  /** The variant of the button, such as default, hover, or focus. */
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-}
+  variant?: "default" | "hover" | "focus" | "inactive";
+  icon?: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+};
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+const Button: React.FC<ButtonProps> = ({
+  size = "medium",
+  variant = "default ",
+  icon,
+  children,
+  className,
+}) => {
+  const baseClasses =
+    "flex items-center justify-center font-semibold rounded-lg transition-colors";
 
-export { Button, buttonVariants }
+  const sizeClasses = {
+    small: children ? "px-3 py-1 text-sm" : "w-8 h-8 text-sm",
+    medium: children ? "px-4 py-2 text-base" : "w-10 h-10 text-base",
+  };
+
+  const variantClasses = {
+    default:
+      "bg-red text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500",
+    hover: "bg-teal-600 text-white",
+    focus: "ring-2 ring-teal-500 bg-teal-700 text-white",
+    inactive: "bg-black text-white  cursor-not-allowed",
+  };
+
+  return (
+    <button
+      className={clsx(
+        baseClasses,
+        sizeClasses[size],
+        variantClasses[variant],
+        className
+      )}
+    >
+      {icon && <span className={children ? "mr-2" : ""}>{icon}</span>}
+      {children}
+    </button>
+  );
+};
+
+export default Button;

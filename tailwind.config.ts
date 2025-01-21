@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "480px", // min-width: 375px (mobile) => @media (min-width: 375px) { ... }
+        md: "744px", // min-width: 744px (tablet) => @media (min-width: 744px) { ... }
+        lg: "1024px", // min-width: 1024px (mini-desktop) => @media (min-width: 1024px) { ... }
+        xl: "1200px", // min-width: 1200px (desktop) => @media (min-width: 1200px) { ... }
+      },
       colors: {
         primary: "#0095d3",
         secondary: "#00B278",
