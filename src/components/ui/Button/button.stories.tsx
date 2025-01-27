@@ -20,7 +20,15 @@ const meta = {
     },
     variant: {
       control: { type: "radio" },
-      options: ["default", "hover", "focus", "inactive"],
+      options: [
+        "default",
+        "hover",
+        "focus",
+        "inactive",
+        "link",
+        "ghost",
+        "outline",
+      ],
     },
     className: { control: "text" },
   },
@@ -64,6 +72,5 @@ export const Defaults: Story = {
   args: {
     ...Default.args,
     size: "small",
-    className: "bg-red",
   },
 };

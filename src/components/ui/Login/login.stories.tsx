@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import AuthPage from "../Login/login";
+import AuthPage from "./login";
 
 const meta = {
   component: AuthPage,
