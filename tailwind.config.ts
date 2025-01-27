@@ -1,11 +1,14 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  prefix: 'ui-',
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./dist/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -16,8 +19,8 @@ export default {
         xl: "1200px", // min-width: 1200px (desktop) => @media (min-width: 1200px) { ... }
       },
       colors: {
-        primary: "#0095d3",
-        secondary: "#00B278",
+        primaryy: "#0095d3",
+        secondaryy: "#00B278",
         "indigo-dye": "#003B54",
         "dark-green": "#133425",
         grey: "#323743",
@@ -25,6 +28,8 @@ export default {
         white: "#ffffff",
         red: "#DC2626",
         border: "#E5E7EB",
+
+        xy: "#000333",
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

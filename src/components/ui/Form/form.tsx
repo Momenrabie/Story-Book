@@ -1,7 +1,7 @@
 // Form.tsx
 import React, { useState } from "react";
 import Input from "../Input/input";
-import Button from "../BUtton/button";
+import Button from "../Button/button";
 
 type FormProps = {
   /** Function to handle form submission. */

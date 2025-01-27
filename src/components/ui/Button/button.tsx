@@ -7,7 +7,14 @@ type ButtonProps = {
   size?: "small" | "medium";
   /** The variant of the button, such as default, hover, or focus. */
 
-  variant?: "default" | "hover" | "focus" | "inactive";
+  variant?:
+    | "default"
+    | "hover"
+    | "focus"
+    | "inactive"
+    | "outline"
+    | "ghost"
+    | "link";
   icon?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
@@ -15,7 +22,8 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
-  variant = "default ",
+  variant = "default",
+
   icon,
   children,
   className,
@@ -30,10 +38,14 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     default:
-      "bg-red text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500",
+      "bg-primary text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500",
     hover: "bg-teal-600 text-white",
     focus: "ring-2 ring-teal-500 bg-teal-700 text-white",
     inactive: "bg-black text-white  cursor-not-allowed",
+    outline:
+      "border border-border bg-background hover:bg-accent hover:text-accent-foreground",
+    ghost: "hover:bg-accent hover:text-accent-foreground",
+    link: "text-primary underline-offset-4 hover:underline",
   };
 
   return (

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Toast from "../Toast/toast";
+import Toast from "./toast";
 
 const meta = {
   component: Toast,
@@ -36,7 +36,6 @@ export const Success: Story = {
     title: "Success",
     message:
       "Thank you for reaching out. We look forward to connecting with you soon.",
-    className: "bg-white",
   },
 };
 
@@ -46,7 +45,5 @@ export const Error: Story = {
     title: "Failed",
     message:
       "An error was found in your entries, please try filling out the form again!",
-      className: "bg-red",
-
   },
 };

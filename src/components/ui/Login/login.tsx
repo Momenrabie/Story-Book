@@ -1,8 +1,6 @@
 import React from "react";
-import Button from "../BUtton/button";
+import Button from "../Button/button";
 import Input from "../Input/input";
-import { Default, WithIcon } from "../BUtton/button.stories";
-import { Email, Password } from "../Input/input.stories";
 
 type AuthPageProps = {
   /** Determines if the page is for login or register */
@@ -28,18 +26,17 @@ const AuthPage: React.FC<AuthPageProps> = ({ type, image }) => {
             {isLogin ? "Login" : "Register"}
           </h1>
           <form className="flex flex-col justify-center items-center space-y-4 w-full">
-            {!isLogin && (
-              <Input {...Default.args} placeholder="Enter your name" />
-            )}
-            <Input {...Email.args} variant="default" />
+            {!isLogin && <Input size="medium" placeholder="Enter your name" />}
+            <Input size="medium" variant="default" />
             <Input
-              {...Password.args}
+              types="password"
+              size="medium"
               placeholder={
                 isLogin ? "Enter your password" : "Create a password"
               }
             />
             <div className="flex justify-center">
-              <Button {...WithIcon.args}>
+              <Button variant="default" icon="🔍">
                 {isLogin ? "Login" : "Register"}
               </Button>
             </div>

@@ -1,7 +1,6 @@
 {
-  "name": "story-book",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@momenrabie111/story-book-me",
+  "version": "1.1.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -50,5 +49,10 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
   }
 }

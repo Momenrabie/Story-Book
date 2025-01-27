@@ -16,8 +16,8 @@ const Toast: React.FC<ToastProps> = ({ type, title, message, className }) => {
     "flex flex-col items-start p-4 rounded-lg shadow-md transition-all w-full max-w-xs";
 
   const typeClasses = {
-    success: "bg-white text-black border border-grey/20",
-    error: "text-white border border-grey/20",
+    success: "bg-primaryy text-black border border-grey/20",
+    error: "bg-secondaryy text-white border border-grey/20",
   };
 
   const titleClasses = {
