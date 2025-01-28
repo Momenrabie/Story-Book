@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Input from "../Input/input";
+import Input from "./input";
 
 const meta = {
   component: Input,
@@ -60,7 +60,7 @@ export const Email: Story = {
     size: "medium",
     placeholder: "Enter Email...",
     variant: "focus",
-    types:"email"
+    types: "email",
   },
 };
 

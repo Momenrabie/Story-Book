@@ -15,7 +15,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
-  variant = "default ",
+  variant = "default",
   icon,
   children,
   className,

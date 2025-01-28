@@ -1,7 +1,7 @@
 // Form.tsx
 import React, { useState } from "react";
 import Input from "../Input/input";
-import Button from "../BUtton/button";
+import Button from "../Button/button";
 
 type FormProps = {
   /** Function to handle form submission. */
@@ -26,8 +26,8 @@ const Form: React.FC<FormProps> = ({
   buttonSize = "medium",
   buttonVariant = "default",
 }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email] = useState("");
+  const [password] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
